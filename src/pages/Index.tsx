@@ -8,27 +8,27 @@ const CoffeeScene = lazy(() => import('@/components/CoffeeScene'));
 const menuCategories = [
   {
     icon: Coffee,
-    title: "Coffee & Hot Drinks",
-    items: ["Espresso", "Cappuccino", "Latte Art", "Hot Chocolate"],
-    price: "From €3.50"
+    title: "Café & Boissons Chaudes",
+    items: ["Espresso", "Cappuccino", "Latte Art", "Chocolat Chaud"],
+    price: "À partir de 3,50 €"
   },
   {
     icon: IceCream,
-    title: "Iced & Bubble Tea",
-    items: ["Iced Latte", "Bubble Tea", "Frappé", "Smoothies"],
-    price: "From €5.00"
+    title: "Thé Glacé & Bubble Tea",
+    items: ["Latte Glacé", "Bubble Tea", "Frappé", "Smoothies"],
+    price: "À partir de 5,00 €"
   },
   {
     icon: UtensilsCrossed,
-    title: "Sweet Treats",
-    items: ["Pancakes", "Waffles", "French Toast", "Pastries"],
-    price: "From €8.50"
+    title: "Douceurs",
+    items: ["Pancakes", "Gaufres", "Pain Perdu", "Pâtisseries"],
+    price: "À partir de 8,50 €"
   },
   {
     icon: Sandwich,
-    title: "Savory Brunch",
-    items: ["Avocado Toast", "Eggs Benedict", "Club Sandwich", "Brunch Plates"],
-    price: "From €12.00"
+    title: "Brunch Salé",
+    items: ["Toast à l'Avocat", "Eggs Benedict", "Club Sandwich", "Assiettes de Brunch"],
+    price: "À partir de 12,00 €"
   }
 ];
 
@@ -107,7 +107,7 @@ export default function Index() {
             <img src="/logo.jpg" alt="O' Brunch Coffee" className="h-12 w-auto object-contain" />
           </motion.a>
           <div className="hidden md:flex items-center gap-8">
-            {['Menu', 'Hours', 'Find Us'].map((item, i) => (
+            {['Menu', 'Horaires', 'Nous Trouver'].map((item, i) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
@@ -117,7 +117,7 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
               >
-                {item === 'Find Us' ? 'Find Us' : item}
+                {item}
                 <motion.span
                   className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary origin-left"
                   initial={{ scaleX: 0 }}
@@ -138,7 +138,7 @@ export default function Index() {
               whileTap={{ scale: 0.95 }}
             >
               <Instagram className="w-4 h-4 mr-2" />
-              Follow Us
+              Nous Suivre
             </motion.a>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function Index() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="inline-block px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-6">
-              ✨ Now Open in Huy
+              ✨ Ouvert à Huy
             </span>
           </motion.div>
 
@@ -193,7 +193,7 @@ export default function Index() {
               animate={{ opacity: 1, rotateY: 0 }}
               transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              Savory
+              Salé
             </motion.span>
           </motion.h1>
 
@@ -203,8 +203,8 @@ export default function Index() {
             transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            Your cozy corner for all-day brunch and specialty coffee in the heart of Huy.
-            Crafted with love, served with a smile.
+            Votre coin cosy pour le brunch toute la journée et le café spécialité au cœur de Huy.
+            Préparé avec amour, servi avec le sourire.
           </motion.p>
 
           <motion.div
@@ -219,7 +219,7 @@ export default function Index() {
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              View Our Menu
+              Voir Notre Menu
             </motion.a>
             <motion.a
               href="#location"
@@ -228,7 +228,7 @@ export default function Index() {
               whileTap={{ scale: 0.95 }}
             >
               <MapPin className="w-5 h-5 mr-2" />
-              Find Us
+              Nous Trouver
             </motion.a>
           </motion.div>
 
@@ -241,7 +241,7 @@ export default function Index() {
           >
             <Clock className="w-5 h-5 text-primary" />
             <span className="text-sm">
-              <strong>Today:</strong> 9:00 AM – 6:00 PM
+              <strong>Aujourd'hui :</strong> 9h00 – 18h00
             </span>
           </motion.div>
         </motion.div>
@@ -281,14 +281,14 @@ export default function Index() {
               className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4"
               variants={fadeInUp}
             >
-              Our Menu
+              Notre Menu
             </motion.h2>
             <motion.p
               className="text-muted-foreground max-w-xl mx-auto"
               variants={fadeInUp}
             >
-              From artisan coffee to Instagram-worthy brunch plates,
-              every dish is crafted with fresh, quality ingredients.
+              Du café artisanal aux assiettes de brunch dignes d'Instagram,
+              chaque plat est préparé avec des ingrédients frais et de qualité.
             </motion.p>
           </motion.div>
 
@@ -345,7 +345,7 @@ export default function Index() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="text-center mt-12"
           >
-            <p className="text-muted-foreground mb-4">Want to see our full menu with prices?</p>
+            <p className="text-muted-foreground mb-4">Vous voulez voir notre menu complet avec les prix ?</p>
             <motion.a
               href="https://instagram.com"
               target="_blank"
@@ -355,7 +355,7 @@ export default function Index() {
               whileTap={{ scale: 0.95 }}
             >
               <Instagram className="w-5 h-5 mr-2" />
-              View on Instagram
+              Voir sur Instagram
             </motion.a>
           </motion.div>
         </div>
@@ -389,7 +389,7 @@ export default function Index() {
                 transition={{ delay: 0.2 }}
                 className="inline-block px-4 py-2 rounded-full bg-white/10 text-white/90 text-sm font-medium mb-6"
               >
-                💝 Limited Time
+                💝 Pour une Durée Limitée
               </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}
@@ -398,7 +398,7 @@ export default function Index() {
                 transition={{ delay: 0.3 }}
                 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
               >
-                Valentine's Brunch Box
+                Boîte Brunch Saint-Valentin
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
@@ -407,9 +407,9 @@ export default function Index() {
                 transition={{ delay: 0.4 }}
                 className="text-white/80 text-lg mb-8"
               >
-                Surprise your loved one with our special brunch box,
-                featuring sweet pancakes, fresh fruits, and artisan coffee.
-                Perfect for a romantic morning!
+                Surprenez votre être cher avec notre boîte brunch spéciale,
+                comprenant des pancakes sucrés, des fruits frais et du café artisanal.
+                Parfait pour un matin romantique !
               </motion.p>
               <motion.a
                 href="https://instagram.com"
@@ -423,7 +423,7 @@ export default function Index() {
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Order via Instagram DM
+                Commander par Message Instagram
               </motion.a>
             </div>
           </motion.div>
@@ -444,21 +444,21 @@ export default function Index() {
                 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6"
                 variants={fadeInLeft}
               >
-                Opening Hours
+                Horaires d'Ouverture
               </motion.h2>
               <motion.p
                 className="text-muted-foreground mb-8"
                 variants={fadeInLeft}
               >
-                We're here to make your mornings (and afternoons) delicious.
-                Stop by for a cozy brunch or grab your coffee to go!
+                Nous sommes là pour rendre vos matins (et après-midis) délicieux.
+                Passez prendre un brunch cosy ou emportez votre café !
               </motion.p>
 
               <div className="space-y-4">
                 {[
-                  { day: "Monday – Friday", hours: "9:00 AM – 6:00 PM" },
-                  { day: "Saturday", hours: "9:00 AM – 7:00 PM" },
-                  { day: "Sunday", hours: "10:00 AM – 5:00 PM" }
+                  { day: "Lundi – Vendredi", hours: "9h00 – 18h00" },
+                  { day: "Samedi", hours: "9h00 – 19h00" },
+                  { day: "Dimanche", hours: "10h00 – 17h00" }
                 ].map((item, i) => (
                   <motion.div
                     key={item.day}
@@ -483,7 +483,7 @@ export default function Index() {
                 whileHover={{ scale: 1.02 }}
               >
                 <p className="text-sm text-accent font-medium">
-                  🎒 School Holidays: Extended hours available!
+                  🎒 Vacances Scolaires : Horaires étendus disponibles !
                 </p>
               </motion.div>
             </motion.div>
@@ -512,10 +512,10 @@ export default function Index() {
                     <Clock className="w-12 h-12 text-primary" />
                   </motion.div>
                   <h3 className="font-serif text-2xl font-bold text-foreground mb-2">
-                    Open Now
+                    Ouvert Maintenant
                   </h3>
                   <p className="text-muted-foreground">
-                    Come say hi! ☕
+                    Venez nous dire bonjour ! ☕
                   </p>
                 </div>
               </motion.div>
@@ -535,10 +535,10 @@ export default function Index() {
             className="text-center mb-12"
           >
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Find Us
+              Nous Trouver
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Located in the heart of Huy, we're just a short walk from the city center.
+              Situé au cœur de Huy, nous ne sommes qu'à quelques pas du centre-ville.
             </p>
           </motion.div>
 
@@ -570,8 +570,8 @@ export default function Index() {
               className="card-cafe flex flex-col justify-center"
             >
               {[
-                { icon: MapPin, title: "Our Address", content: "Rue des Rôtisseurs 6\n4500 Huy, Belgium" },
-                { icon: Instagram, title: "Contact Us", content: "DM us on Instagram for orders\nand reservations" }
+                { icon: MapPin, title: "Notre Adresse", content: "Rue des Rôtisseurs 6\n4500 Huy, Belgique" },
+                { icon: Instagram, title: "Contactez-Nous", content: "Envoyez-nous un message sur Instagram pour les commandes\net réservations" }
               ].map((item, i) => (
                 <motion.div
                   key={item.title}
@@ -610,7 +610,7 @@ export default function Index() {
                 whileHover={{ scale: 1.02, y: -3 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Get Directions
+                Obtenir l'Itinéraire
               </motion.a>
             </motion.div>
           </div>
@@ -631,14 +631,14 @@ export default function Index() {
               className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6"
               variants={scaleIn}
             >
-              Follow Our Journey
+              Suivez Notre Parcours
             </motion.h2>
             <motion.p
               className="text-muted-foreground max-w-xl mx-auto mb-8"
               variants={fadeInUp}
             >
-              Join our community for daily inspiration, contests,
-              and first looks at new menu items!
+              Rejoignez notre communauté pour l'inspiration quotidienne, les concours,
+              et les premiers aperçus des nouveaux plats !
             </motion.p>
             <motion.a
               href="https://instagram.com"
@@ -670,7 +670,7 @@ export default function Index() {
             O' Brunch Coffee
           </motion.p>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} O' Brunch Coffee – Huy. All rights reserved.
+            © {new Date().getFullYear()} O' Brunch Coffee – Huy. Tous droits réservés.
           </p>
           <div className="flex items-center gap-4">
             <motion.a
